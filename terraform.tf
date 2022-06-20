@@ -39,3 +39,13 @@ resource "aws_subnet" "pubsubnet" {
     Name = "pubsubnet"
   }
 }
+
+resource "aws_subnet" "privatesubnet" {
+  vpc_id     = aws_vpc.seanvpc.id
+  cidr_block = "10.0.2.0/24"
+
+  tags = {
+    Name = "privatesubnet"
+  }
+}
+
